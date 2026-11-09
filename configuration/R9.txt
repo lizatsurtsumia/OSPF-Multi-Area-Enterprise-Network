@@ -1,0 +1,213 @@
+R9
+
+
+!
+! Last configuration change at 11:10:27 UTC Mon Nov 9 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R9
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 9.9.9.9 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet3/0
+ ip address 192.168.3.9 255.255.255.0
+ duplex full
+!
+interface Ethernet3/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet3/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet3/3
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet4/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet4/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet4/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet4/3
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/3
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/4
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/5
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/6
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet5/7
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/3
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/4
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/5
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/6
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet6/7
+ no ip address
+ shutdown
+ duplex full
+!
+router ospf 1
+ area 3 stub
+ network 9.9.9.9 0.0.0.0 area 3
+ network 192.168.3.0 0.0.0.255 area 3
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
